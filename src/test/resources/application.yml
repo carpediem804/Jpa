@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:tibero:thin:@127.0.0.1:8629:tibero
+    username: preprocess
+    password: preprocess
+    driver-class-name: com.tmax.tibero.jdbc.TbDriver
+  jpa:
+    database-platform : org.hibernate.dialect.Oracle9Dialect # for tibero
+    hibernate:
+#      database-platform: org.hibernate.dialect.Oracle9Dialect
+      ddl-auto: create
+      # APPLICATION 생성 시점
+  properties:
+    hibernate:
+      show_sql: true
+      format_sql: true
+
+
+##로그 레벨 정하는 것
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace
